@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+.vscode/
+.ipynb_checkpoints/
+notebooks/
+data/
+catboost_info/
+tests/
+logs/
+.git/
+.gitignore
