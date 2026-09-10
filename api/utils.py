@@ -16,7 +16,7 @@ def setup_logger():
     )
 
     # File handler
-    LOGS_DIR.makedirs(parents=True, exist_ok=True)
+    LOGS_DIR.mkdir(parents=True, exist_ok=True)
     file_handler = logging.FileHandler(LOG_FILE)
     file_handler.setFormatter(formatter)
 
