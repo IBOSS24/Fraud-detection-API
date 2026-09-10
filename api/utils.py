@@ -1,7 +1,6 @@
 # api/utils.py
-
 import logging
-from api.config import LOG_FILE
+from api.config import LOG_FILE,LOGS_DIR
 
 
 def setup_logger():
@@ -17,6 +16,7 @@ def setup_logger():
     )
 
     # File handler
+    LOGS_DIR.makedirs(parents=True, exist_ok=True)
     file_handler = logging.FileHandler(LOG_FILE)
     file_handler.setFormatter(formatter)
 
