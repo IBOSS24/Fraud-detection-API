@@ -24,7 +24,7 @@ LOG_FILE = LOGS_DIR / "app.log"
 # ----------------------------
 
 API_TITLE = "Fraud Detection API"
-API_VERSION = "1.1.0"
+API_VERSION = "1.0.0"
 
 # ----------------------------
 # Model Settings
