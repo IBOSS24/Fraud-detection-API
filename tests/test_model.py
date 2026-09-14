@@ -7,7 +7,7 @@ def test_model(client):
     data = response.json()
 
     # Assert
-    assert response.status_code==201
+    assert response.status_code==200
     assert data ["model_name"] == "CatBoost Fraud Detector"
     assert data ["algorithm"] == "CatBoostClassifier"
     assert data ["model_type"] == "Binary Classification"
