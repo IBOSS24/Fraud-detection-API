@@ -30,6 +30,9 @@ jobs:
       docker: ${{ steps.filter.outputs.docker }}
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
       - name: Check changed files
         uses: dorny/paths-filter@v3
         id: filter
