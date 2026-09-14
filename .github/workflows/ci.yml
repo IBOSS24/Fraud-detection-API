@@ -23,8 +23,31 @@ jobs:
 
       - name: Run tests
         run: pytest
+  changes:
+    runs-on: ubuntu-latest
+
+    outputs:
+      docker: ${{ steps.filter.outputs.docker }}
+
+    steps:
+      - name: Check changed files
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            docker:
+              - 'api/**'
+              - 'models/**'
+              - 'requirements.txt'
+              - 'Dockerfile'
+              - '.dockerignore'
   docker-build:
-    needs: test
+    needs:
+      - test
+      - changes
+
+    if: github.ref == 'refs/heads/main' && needs.changes.outputs.docker == 'true'
+
     runs-on: ubuntu-latest
 
     steps:
