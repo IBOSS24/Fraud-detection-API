@@ -77,8 +77,19 @@ jobs:
           echo "API failed to become ready"
           docker logs fraud-api-test
           exit 1
+           
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+            username: ${{ vars.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Tag Docker image
+        run: docker tag fraud-api:test iboss17/fraud-api:test
+
+      - name: Push Docker image
+        run: docker push iboss17/fraud-api:test
+        
       - name: Stop and remove container
         if: always()
         run: docker rm -f fraud-api-test
-           
