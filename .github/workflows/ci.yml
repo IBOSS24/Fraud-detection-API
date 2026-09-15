@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Check changed files
         uses: dorny/paths-filter@v3
         id: filter
@@ -59,3 +59,22 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t fraud-api:test .
+
+      - name: Run container
+        run: docker run -d --name fraud-api-test -p 8000:8000 fraud-api:test
+
+      - name: Wait for API readiness
+        run: |
+          for i in {1..30}; do
+            if curl --fail http://localhost:8000/health; then
+              echo "API is ready"
+              exit 0
+            fi
+            echo "API not ready yet. Retrying..."
+            sleep 2
+          done
+
+          echo "API failed to become ready"
+          docker logs fraud-api-test
+          exit 1
+           
