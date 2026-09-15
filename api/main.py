@@ -1,7 +1,7 @@
 # This is the main entry point for the FastAPI application. 
 # It sets up the API with a title and version, 
 # defines a root endpoint that returns a simple message,
-#  and includes 3 routers for health checks, predictions, and model info
+#  and includes 3 routers for health checks, predictions, and model info.
 from fastapi import FastAPI
 
 from api.config import API_TITLE, API_VERSION
