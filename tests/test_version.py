@@ -6,7 +6,7 @@ def test_version(client):
     response=client.get("/version")
     data=response.json()
     # Assert
-    assert response.status_code==500
+    assert response.status_code==200
     assert data ["api_version"] == API_VERSION
     assert data ["model_name"] == "CatBoost Fraud Detector"
     assert data ["model_version"] == "1.0.0"
