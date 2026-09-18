@@ -2,10 +2,12 @@ FROM python:3.11
 
 WORKDIR /app
 
+ARG API_VERSION=0.0.0-dev
+ENV API_VERSION=${API_VERSION}
+
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt
-RUN mkdir -p /app/logs
 
 COPY api ./api
 COPY models ./models

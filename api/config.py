@@ -1,6 +1,7 @@
 # api/config.py
 
 from pathlib import Path
+import os
 
 # ----------------------------
 # Project Directories
@@ -24,8 +25,7 @@ LOG_FILE = LOGS_DIR / "app.log"
 # ----------------------------
 
 API_TITLE = "Fraud Detection API"
-API_VERSION = "1.1.2"
-
+API_VERSION = os.getenv("API_VERSION", "0.0.0-dev")
 # ----------------------------
 # Model Settings
 # ----------------------------

@@ -33,13 +33,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Build Docker image
-        run: docker build -t fraud-api:test .
-
+      
       - name: Get release version
         id: version
         run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Build Docker image
+        run:  |
+          docker build \
+            --build-arg API_VERSION=${{ steps.version.outputs.version }} \
+            -t fraud-api:test .
 
       - name: Run container
         run: docker run -d --name fraud-api-release -p 8000:8000 fraud-api:test
@@ -58,7 +61,19 @@ jobs:
           echo "API failed to become ready"
           docker logs fraud-api-release
           exit 1
+      
+      - name: Verify API release version
+        run: |
+          EXPECTED="${{ steps.version.outputs.version }}"
 
+          ACTUAL=$(curl --fail --silent http://localhost:8000/version \
+            | python3 -c 'import sys, json; print(json.load(sys.stdin)["api_version"])')
+
+          echo "Expected version: $EXPECTED"
+          echo "Running API version: $ACTUAL"
+
+          test "$ACTUAL" = "$EXPECTED"
+          
       - name: Tag release image
         run: docker tag fraud-api:test iboss17/fraud-api:${{ steps.version.outputs.version }}
 
