@@ -10,5 +10,6 @@ data/
 catboost_info/
 tests/
 logs/
+scripts/
 .git/
 .gitignore
