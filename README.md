@@ -200,13 +200,4 @@ State-qualified engineer · Moroccan Royal Navy officer · Building a career in 
 
 I bring experience at sea and in maritime command centers to my work in applied machine learning. My focus is developing reliable ML systems and applying them to maritime traffic forecasting, vessel behavior analysis, and equipment reliability.
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-173B57?style=flat-square&logo=github&logoColor=white)](https://github.com/IBOSS24/Portfolio_)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohammed-e-a13664182)
-<details>
-<summary><img src="https://img.shields.io/badge/Gmail-Show_email-173B57?style=flat-square&amp;logo=gmail&amp;logoColor=white" alt="Gmail — show email"></summary>
-
-**med.marin17@gmail.com**
-
-[Open in Gmail](https://mail.google.com/mail/?view=cm&fs=1&to=med.marin17%40gmail.com) · [Open in your mail app](mailto:med.marin17@gmail.com)
-
-</details>
+[![Portfolio](https://img.shields.io/badge/Portfolio-173B57?style=flat-square&logo=github&logoColor=white)](https://github.com/IBOSS24/Portfolio_) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohammed-e-a13664182) [![Gmail](https://img.shields.io/badge/Gmail-173B57?style=flat-square&logo=gmail&logoColor=white)](https://mail.google.com/mail/?view=cm&fs=1&to=med.marin17%40gmail.com)
