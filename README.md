@@ -202,20 +202,11 @@ I bring experience at sea and in maritime command centers to my work in applied 
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-173B57?style=flat-square&logo=github&logoColor=white)](https://github.com/IBOSS24/Portfolio_)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohammed-e-a13664182)
-[![Contact](https://img.shields.io/badge/Contact-Show_details-173B57?style=flat-square&logo=gmail&logoColor=white)](#contact)
-
-<a id="contact"></a>
-
-## 📬 Contact
-
 <details>
-<summary>Show email and contact details</summary>
+<summary><img src="https://img.shields.io/badge/Gmail-Show_email-173B57?style=flat-square&amp;logo=gmail&amp;logoColor=white" alt="Gmail — show email"></summary>
 
-- **Email:** med.marin17@gmail.com
-- **Gmail:** [Compose an email in Gmail](https://mail.google.com/mail/?view=cm&fs=1&to=med.marin17%40gmail.com)
-- **Mail app:** [med.marin17@gmail.com](mailto:med.marin17@gmail.com)
-- **LinkedIn:** [Mohammed E.](https://www.linkedin.com/in/mohammed-e-a13664182)
-- **GitHub:** [IBOSS24](https://github.com/IBOSS24)
-- **Portfolio:** [View my projects](https://github.com/IBOSS24/Portfolio_)
+**med.marin17@gmail.com**
+
+[Open in Gmail](https://mail.google.com/mail/?view=cm&fs=1&to=med.marin17%40gmail.com) · [Open in your mail app](mailto:med.marin17@gmail.com)
 
 </details>
