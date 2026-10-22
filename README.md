@@ -112,30 +112,20 @@ Missing required fields produce a validation error (422). Caught inference failu
 
 ## 🚀 Quick start
 
-Use **Python 3.11**, matching the Dockerfile and workflows.
+Use **Conda with Python 3.11**, matching the project's local workflow and the Python version used by Docker and CI. On Windows, run these commands in Anaconda Prompt.
 
 ```bash
 git clone https://github.com/IBOSS24/Fraud-detection-API.git
 cd Fraud-detection-API
-python -m venv .venv
-```
-
-Activate the environment:
-
-- Linux/macOS: `source .venv/bin/activate`
-- Windows PowerShell: `.\.venv\Scripts\Activate.ps1`
-
-Then:
-
-```bash
-python -m pip install --upgrade pip
+conda create -n fraud-api python=3.11 -y
+conda activate fraud-api
 python -m pip install -r requirements.txt
 python -m uvicorn api.main:app --host 127.0.0.1 --port 8000
 ```
 
-Open http://127.0.0.1:8000/docs or http://127.0.0.1:8000/health.
+For subsequent sessions, activate the existing environment with `conda activate fraud-api` before starting the API.
 
-**Reproducibility note:** the current requirements file contains `httpx2=== 2.12.0`; this entry needs review before relying on a clean installation. The request example uses `httpx`, which should be available in the active environment. These documentation changes do not certify that a fresh installation succeeds.
+Open http://127.0.0.1:8000/docs or http://127.0.0.1:8000/health.
 
 The model artifact must exist at `models/fraud_detector.pkl`. It is loaded at import time, and a missing artifact prevents startup. Only load trusted serialized model artifacts.
 
@@ -187,7 +177,6 @@ The production workflow requires repository/environment configuration including 
 ## 🔭 Scope and next steps
 
 - Publish a reproducible evaluation report with the data source, split strategy, class distribution, precision, recall, PR-AUC, MCC, and threshold rationale.
-- Review dependency pins and verify installation from a clean environment.
 - Extend experiment tracking and model lifecycle management with MLflow; add tuning and monitoring as the project develops.
 - Address authentication, transport security, data drift, and operational monitoring before use with sensitive real-world traffic.
 
